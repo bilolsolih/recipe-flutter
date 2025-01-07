@@ -1,3 +1,5 @@
+import 'package:Recipes/common/widgets/button.dart';
+import 'package:Recipes/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,42 +34,24 @@ class OnboardingPageV2 extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 28),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                context.go('/customization');
-              },
-              style: ElevatedButton.styleFrom(
-                foregroundColor: const Color(0xFFEC888D),
-                backgroundColor: const Color(0xFFFFC6C9),
-                minimumSize: const Size(207, 45),
-              ),
-              child: const Text(
-                "I'm New",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+          RecipeButton(
+            title: "I'm New",
+            fontSize: 20,
+            width: 207 * Screen.wratio,
+            height: 45 * Screen.hratio,
+            foreground: AppConstants.pinkSub,
+            background: AppConstants.pink,
+            callback: () => context.go('/signup'),
           ),
           const SizedBox(height: 20),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                foregroundColor: const Color(0xFFEC888D),
-                backgroundColor: const Color(0xFFFFC6C9),
-                minimumSize: const Size(207, 45),
-              ),
-              child: const Text(
-                "I've Been Here",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+          RecipeButton(
+            title: "I've Been Here",
+            fontSize: 20,
+            width: 207 * Screen.wratio,
+            height: 45 * Screen.hratio,
+            foreground: AppConstants.pinkSub,
+            background: AppConstants.pink,
+            callback: () => context.go('/login'),
           ),
         ],
       ),

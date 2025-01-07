@@ -1,9 +1,8 @@
+import 'package:Recipes/common/widgets/clock_and_duration.dart';
 import 'package:Recipes/common/widgets/text.dart';
 import 'package:Recipes/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../your_recipe_item.dart';
 
 class RecipeVideoWithPlayButton extends StatelessWidget {
   const RecipeVideoWithPlayButton({super.key});
@@ -179,7 +178,6 @@ class RecipeDetailIngredientItem extends StatelessWidget {
                     color: AppConstants.mainColor,
                   ),
                 ),
-
               Text(
                 ingredient['ingredient'],
                 style: TextStyle(

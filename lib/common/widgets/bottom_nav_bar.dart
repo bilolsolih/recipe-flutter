@@ -1,6 +1,7 @@
 import 'package:Recipes/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -41,16 +42,15 @@ class BottomNavBarVanilla extends StatelessWidget {
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BottomNavBarItem(image: "assets/icons/home.svg"),
-          BottomNavBarItem(image: "assets/icons/community.svg"),
-          BottomNavBarItem(image: "assets/icons/categories.svg"),
-          BottomNavBarItem(image: "assets/icons/profile.svg"),
+          BottomNavBarItem(image: "assets/icons/home.svg", destination: '/home'),
+          BottomNavBarItem(image: "assets/icons/community.svg", destination: '/community'),
+          BottomNavBarItem(image: "assets/icons/categories.svg", destination: '/categories'),
+          BottomNavBarItem(image: "assets/icons/profile.svg", destination: '/profile'),
         ],
       ),
     );
   }
 }
-
 
 class BottomNavBarShadow extends StatelessWidget {
   const BottomNavBarShadow({super.key});
@@ -73,17 +73,24 @@ class BottomNavBarShadow extends StatelessWidget {
 }
 
 class BottomNavBarItem extends StatelessWidget {
-  const BottomNavBarItem({super.key, required this.image});
+  const BottomNavBarItem({
+    super.key,
+    required this.image,
+    required this.destination,
+  });
 
-  final String image;
+  final String image, destination;
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      image,
-      width: 27,
-      height: 27,
-      fit: BoxFit.cover,
+    return IconButton(
+      onPressed: () => context.go(destination),
+      icon: SvgPicture.asset(
+        image,
+        width: 27,
+        height: 27,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

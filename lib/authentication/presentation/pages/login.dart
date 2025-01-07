@@ -5,6 +5,7 @@ import 'package:Recipes/common/widgets/text.dart';
 import 'package:Recipes/constants.dart';
 import 'package:Recipes/utils/api_client.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -18,16 +19,15 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = TextEditingController();
   final AuthRepository repo = AuthRepository(ApiClient().dio);
 
-  Future<void> loginCallback() async {
-    await repo.login(emailController.text, passwordController.text);
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text("Logged in Successfully"),
-      ),
-    );
+  Future loginCallback() async {
+    context.go('/home');
+    // await repo.login(emailController.text, passwordController.text);
+    // ScaffoldMessenger.of(context).showSnackBar(
+    //   const SnackBar(
+    //     content: Text("Logged in Successfully"),
+    //   ),
+    // );
   }
-
-  void signupCallback() {}
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 60),
-            const RecipeText(text: "Login", fontSize: 20,fontWeight: FontWeight.bold),
+            const RecipeText(text: "Login", fontSize: 20, fontWeight: FontWeight.bold),
             const SizedBox(height: 40),
             TextInputField(
               label: "Login",
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 45,
               foreground: AppConstants.pinkSub,
               background: AppConstants.pink,
-              callback: signupCallback,
+              callback: () => context.go('/signup'),
             ),
             const SizedBox(height: 20),
             TextButton(

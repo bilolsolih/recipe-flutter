@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({super.key, required this.title, required this.subtitle, required this.image, required this.callback});
+  const OnboardingPage({super.key, required this.title, required this.subtitle, required this.image});
 
   final String title, subtitle, image;
-  final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
@@ -61,41 +60,6 @@ class OnboardingPage extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-        ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 128,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color(0xFF1C0F0D).withOpacity(1.0),
-                  const Color(0xFF1C0F0D).withOpacity(0.8),
-                  const Color(0xFF1C0F0D).withOpacity(0.0),
-                ],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 48,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: ElevatedButton(
-              onPressed: callback,
-              style: ElevatedButton.styleFrom(
-                foregroundColor: const Color(0xFFEC888D),
-                backgroundColor: const Color(0xFFFFC6C9),
-                minimumSize: const Size(207, 45),
-              ),
-              child: const Text("Continue"),
-            ),
           ),
         ),
       ],

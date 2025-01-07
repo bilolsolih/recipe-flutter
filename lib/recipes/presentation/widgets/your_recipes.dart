@@ -26,7 +26,7 @@ class YourRecipes extends StatelessWidget {
             children: [
               YourRecipe(
                 title: "Chicken Burger",
-                duration: "15min",
+                duration: "25min",
                 number: 5,
                 image: "assets/images/your_recipes/chicken_burger.png",
               ),

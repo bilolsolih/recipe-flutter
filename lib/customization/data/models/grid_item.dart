@@ -5,6 +5,10 @@ class CustomizationGridItem {
   const CustomizationGridItem({required this.id, required this.title, required this.image});
 
   factory CustomizationGridItem.fromJson(Map<String, dynamic> json) {
-    return CustomizationGridItem(id: json['id'], title: json['title'], image: json['image']);
+    return CustomizationGridItem(
+      id: json['id'],
+      title: json['title'],
+      image: json['image'],
+    );
   }
 }

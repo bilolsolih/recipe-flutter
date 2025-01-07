@@ -1,8 +1,9 @@
+import 'package:Recipes/common/widgets/clock_and_duration.dart';
 import 'package:Recipes/common/widgets/image_with_border_radius.dart';
+import 'package:Recipes/common/widgets/number_and_star.dart';
 import 'package:Recipes/common/widgets/recipe_description.dart';
 import 'package:Recipes/common/widgets/text.dart';
 import 'package:Recipes/constants.dart';
-import 'package:Recipes/recipes/presentation/widgets/your_recipe_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/recipe.dart';

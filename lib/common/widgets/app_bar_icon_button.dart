@@ -24,7 +24,6 @@ class AppBarIconButton extends StatelessWidget {
         onPressed: callback,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(0),
-          foregroundColor: foreground,
           backgroundColor: background,
         ),
         child: SvgPicture.asset(
@@ -33,6 +32,7 @@ class AppBarIconButton extends StatelessWidget {
           width: 12,
           height: 18,
           clipBehavior: Clip.none,
+          colorFilter: ColorFilter.mode(foreground, BlendMode.srcIn),
         ),
       ),
     );

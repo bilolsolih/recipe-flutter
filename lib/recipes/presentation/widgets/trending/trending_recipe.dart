@@ -10,19 +10,19 @@ class TrendingRecipes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 20),
-      child: Center(
-        child: SizedBox(
-          height: 220,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              RecipeText(text: "Trending Recipe"),
-              SizedBox(height: 9),
-              TrendingRecipeMain(fontColor: Colors.white, backgroundColor: AppConstants.beigeColor),
-            ],
-          ),
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: Screen.padding36),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RecipeText(text: "Trending Recipe"),
+            SizedBox(height: 9),
+            TrendingRecipeMain(
+              fontColor: Colors.white,
+              backgroundColor: AppConstants.beigeColor,
+            ),
+          ],
         ),
       ),
     );
@@ -64,12 +64,11 @@ class TrendingRecipeMain extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Salami and cheese pizza",
-                            style: TextStyle(
-                              color: fontColor,
-                              fontSize: 13,
-                            ),
+                          RecipeText(
+                            text: "Salami and cheese pizza",
+                            fontSize: 13,
+                            color: fontColor,
+                            fontWeight: FontWeight.normal,
                           ),
                           const ClockAndDuration(duration: "30min"),
                         ],

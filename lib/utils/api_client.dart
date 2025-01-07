@@ -6,7 +6,7 @@ class ApiClient {
   final Dio dio = Dio();
 
   ApiClient() {
-    dio.options.baseUrl = 'http://192.168.1.80:8000/api/v1';
+    dio.options.baseUrl = 'http://192.168.1.80/api/v1';
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         final String? token = await TokenManager.getAccessToken();

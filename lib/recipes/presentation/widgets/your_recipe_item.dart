@@ -4,7 +4,13 @@ import 'package:Recipes/constants.dart';
 import 'package:flutter/material.dart';
 
 class YourRecipe extends StatelessWidget {
-  const YourRecipe({super.key, required this.title, required this.duration, required this.number, required this.image});
+  const YourRecipe({
+    super.key,
+    required this.title,
+    required this.duration,
+    required this.number,
+    required this.image,
+  });
 
   final String title, duration, image;
   final int number;

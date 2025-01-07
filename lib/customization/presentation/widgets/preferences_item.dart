@@ -1,11 +1,10 @@
+import 'package:Recipes/customization/data/models/cuisine_model.dart';
 import 'package:flutter/material.dart';
-
-import '../../data/models/grid_item.dart';
 
 class PreferencesItem extends StatelessWidget {
   const PreferencesItem({super.key, required this.item});
 
-  final CustomizationGridItem item;
+  final CuisineModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class PreferencesItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image(
-              image: AssetImage(item.image),
+              image: NetworkImage(item.image),
               width: 98,
               height: 98,
               fit: BoxFit.cover,

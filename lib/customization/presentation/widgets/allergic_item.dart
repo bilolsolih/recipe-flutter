@@ -1,12 +1,11 @@
 import 'package:Recipes/constants.dart';
+import 'package:Recipes/customization/data/models/allergic_model.dart';
 import 'package:flutter/material.dart';
-
-import '../../data/models/grid_item.dart';
 
 class AllergicItem extends StatelessWidget {
   const AllergicItem({super.key, required this.item});
 
-  final CustomizationGridItem item;
+  final AllergicIngredientModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +15,13 @@ class AllergicItem extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: AppConstants.pink,
-                width: 1.5
-              ),
+              border: Border.all(color: AppConstants.pink, width: 1.5),
               borderRadius: BorderRadius.circular(13.5),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(13.5),
               child: Image(
-                image: AssetImage(item.image),
+                image: NetworkImage(item.image),
                 width: 112,
                 height: 112,
                 fit: BoxFit.cover,

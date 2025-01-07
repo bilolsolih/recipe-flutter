@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class AppConstants {
   static const beigeColor = Color(0xFF1C0F0D);
   static const mainColor = Color(0xFFFD5D69);
@@ -33,6 +34,7 @@ class Screen {
   static late double width;
   static late double height;
   static late double padding36;
+  static late double appBarPadding;
 
   static late double wratio;
   static late double hratio;
@@ -46,5 +48,6 @@ class Screen {
     hratio = height / 932;
 
     padding36 = 36 * wratio;
+    appBarPadding = 20.0;
   }
 }

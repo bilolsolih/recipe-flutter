@@ -9,12 +9,13 @@ class RecipeAppBarMain extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   const RecipeAppBarMain({super.key, required this.title});
   @override
-  Size get preferredSize => const Size(double.infinity, 60);
+  Size get preferredSize => const Size(double.infinity, 71);
   @override
   Widget build(BuildContext context) {
     return AppBar(
       surfaceTintColor: Colors.transparent,
       centerTitle: true,
+      toolbarHeight: 71,
       leading: Center(
         child: SvgPicture.asset(
           "assets/icons/back-arrow.svg",

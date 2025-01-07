@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'widgets/app_bar_detail.dart';
 import 'widgets/bottom_nav_bar.dart';
 
 class BaseScreen extends StatelessWidget {

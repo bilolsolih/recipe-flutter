@@ -1,4 +1,3 @@
-import 'package:Recipes/recipes/data/models/ingredient.dart';
 
 class RecipeDetailModel {
   final String title, image, desc, chefFullName, chefUsername, chefImage, difficulty;
